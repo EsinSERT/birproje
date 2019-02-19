@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <style type="text/css">
+        
+            t-scroll {
+                position: absolute;
+                width: 600px;
+                height: 600px;
+                background-color: red;
+                top: calc(50% - 300px);
+                left: calc(50% - 300px);
+                overflow: hidden;
+            }
+
+            t-box {
+                position: absolute;
+                width: 620px;
+                height: 600px;
+                background-color: red;
+                top: calc(50% - 300px);
+                left: calc(50% - 300px);
+                overflow-y: scroll;
+            }
+
+            t-content {
+                position: relative;
+                float: left;
+                width: 300px;
+                height: 200px;
+                margin-left: 150px;
+                margin-top: 20px;
+                margin-right: 150px;
+                background-color: green;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <t-scroll>
+
+            <t-box>
+
+                <t-content></t-content>
+                <t-content></t-content>
+                <t-content></t-content>
+                <t-content></t-content>
+                <t-content></t-content>
+                <t-content></t-content>
+                <t-content></t-content>
+                <t-content></t-content>
+                <t-content></t-content>
+
+            </t-box>
+
+        </t-scroll>
+
+    </body>
+</html>

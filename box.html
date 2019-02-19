@@ -1,0 +1,191 @@
+<html>
+   <head>
+       <style type="text/css">
+
+
+        body{
+                
+                position: absolute;
+                width: 100vw;
+                height:100vh;
+                margin:0;
+                padding:0;
+                top:0;
+                left:0;
+
+            }
+
+         t-box {
+
+                position:absolute;
+                width: 600px;
+                height: 600px;
+                background-color: red;
+                top:calc(50% - 300px);
+                right: calc(50% - 300px);
+                overflow: hidden;
+                
+                
+                
+            }
+
+            t-handle {
+
+                position:absolute;
+                width: 50px;
+                height: 50px;
+                top: 0px;
+                background-color: green;
+
+            }
+
+            t-handle.t-closed-state {
+
+                   left: 0px;
+                   transition: all 1s ease;    
+
+            }
+            t-handle.t-open-state {
+
+                   left: 200px;
+                   transition: all 1s ease;    
+
+            }
+           
+           t-menu {
+
+                  position: absolute;
+                  width: 200px;
+                  height: 600px;
+                  background-color: blueviolet;
+                
+
+           }
+
+           t-menu.t-closed-state {
+
+               left: -200px;
+               transition: all 1s ease;
+
+           }
+
+           t-menu.t-open-state {
+
+               left: 0px;
+               transition: all 1s ease;
+
+           }
+
+           t-text{
+
+                position: absolute;
+              
+                color:black;
+                width: 200px;
+                height: 100px;
+                background-color: deepskyblue;
+                text-align: center;
+                line-height: 100px;
+                
+
+           }
+           t-box1 {
+
+                position: absolute;
+                width: 200px;
+                height: 475px;
+                background-color:crimson;
+                left:0px;
+                overflow-y:scroll;
+                top:125px;
+               
+
+            }
+          
+           t-item-box{
+
+               position:relative;
+               float: left;
+               width: 175px;
+               height: 50px;
+               left:25px;
+               background-color: chartreuse;
+            
+
+
+               
+           }
+           
+
+        </style>
+
+     </head>
+
+           <body>
+
+             <t-box> 
+               <t-handle class="t-closed-state"></t-handle>
+               <t-menu class="t-closed-state">
+
+                    <t-text>Esin</t-text>
+
+                    <t-box1>
+
+                            <t-item-box>Item1</t-item-box>
+                            <t-item-box>Item2</t-item-box> 
+                            <t-item-box>Item3</t-item-box>
+                            <t-item-box>Item4</t-item-box>
+                            <t-item-box>Item5</t-item-box> 
+                            <t-item-box>Item6</t-item-box>
+                            <t-item-box>Item7</t-item-box>
+                            <t-item-box>Item8</t-item-box> 
+                            <t-item-box>Item9</t-item-box>
+                            <t-item-box>Item10</t-item-box>
+                            <t-item-box>Item11</t-item-box> 
+                            <t-item-box>Item12</t-item-box>
+                            <t-item-box>Item13</t-item-box>
+                            <t-item-box>Item14</t-item-box> 
+                            <t-item-box>Item15</t-item-box>
+             
+             
+             
+             
+             
+                            
+                            </t-box1>
+
+
+
+               </t-menu>
+            </t-box>
+
+         <script type="text/javascript">
+        
+        var state = "closed";
+        
+
+        var menu=document.querySelector("t-menu");
+
+        var handle=document.querySelector("t-handle");
+    
+        handle.onclick = function() {
+                
+    
+            if (state == "closed")
+                state="open";
+            else
+                state="closed";
+
+            handle.className="t-"+ state +"-state";
+            
+            menu.className="t-"+ state +"-state";
+            };
+        
+
+     </script>    
+
+
+</body>
+
+
+</html>

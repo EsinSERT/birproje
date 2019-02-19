@@ -1,0 +1,167 @@
+<html>
+    <head>
+
+        <style type="text/css">
+     
+            body{
+                
+                position: absolute;
+                width: 100vw;
+                height:100vh;
+                margin:0;
+                padding:0;
+                top:0;
+                left:0;
+
+            }
+
+            t-menu {
+                position:absolute;
+                width:50px;
+                height:50px;
+                top:0px;
+                background-color: green;
+            }
+           
+             t-menu.t-forward-state {
+
+                left: 600px;
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                -o-transition: all 1s ease;
+                -ms-transition: all 1s ease;
+
+             }
+
+             t-menu.t-backward-state {
+
+                left: 0px;
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                -o-transition: all 1s ease;
+                -ms-transition: all 1s ease;
+
+                }
+
+            t-box {
+
+                position:absolute;
+                width:600px;
+                height:600px;
+                background-color: red;
+                top:calc(50%-300px);
+                right: calc(50%-300px);
+                
+                
+                
+            }
+            t-box1 {
+
+                position: absolute;
+                width: 600px;
+                height: 600px;
+                background-color:crimson;
+                left:0px;
+                overflow-y:scroll;
+                top:125px;
+               
+
+            }
+          
+           t-item-box{
+
+               position:relative;
+               float: left;
+               width: 600px;
+               height: 50px;
+               left:25px;
+               background-color: chartreuse;
+             }
+           
+
+              t-text {
+
+                position: relative;
+                float: left;
+                color:black;
+                width: 600px;
+                height: 100px;
+                background-color: deepskyblue;
+                text-align: center;
+                line-height: 200px;
+            }
+            
+            t-box.t-open-state {
+                
+                left:0px;
+        
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                -o-transition: all 1s ease;
+                -ms-transition: all 1s ease;
+            }
+
+            t-box.t-closed-state {
+                
+                left:-600px;
+
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                -o-transition: all 1s ease;
+                -ms-transition: all 1s ease;
+            } 
+
+        </style>
+
+    </head>
+    <body>
+        <t-menu class="t-backward-state"> </t-menu>
+        <t-box class="t-closed-state">
+            <t-text>Esin</t-text>
+
+            <t-box1>
+            <t-item-box>Item1</t-item-box>
+            <t-item-box>Item2</t-item-box> 
+            <t-item-box>Item3</t-item-box>
+            <t-item-box>Item4</t-item-box>
+            <t-item-box>Item5</t-item-box> 
+            <t-item-box>Item6</t-item-box>
+            <t-item-box>Item7</t-item-box>
+            <t-item-box>Item8</t-item-box> 
+            <t-item-box>Item9</t-item-box>
+            <t-item-box>Item10</t-item-box>
+            <t-item-box>Item11</t-item-box> 
+            <t-item-box>Item12</t-item-box>
+            <t-item-box>Item13</t-item-box>
+            <t-item-box>Item14</t-item-box> 
+            <t-item-box>Item15</t-item-box>
+           </t-box1>
+         </t-box>
+    <script>
+        var state = "closed";
+        var stateMenu ="backward";
+
+        let menu=document.querySelector("t-menu");
+        let box=document.querySelector("t-box");
+        
+        menu.onclick = function() {
+                    
+                if (state == "closed")
+                    state="open";
+                else
+                    state="closed";
+
+                box.className="t-"+ state +"-state";
+                
+                if (stateMenu == "backward")
+                    stateMenu="forward";
+                else
+                    stateMenu="backward";
+                
+                menu.className="t-"+ stateMenu +"-state";
+                
+
+            };
+    </script>    
+ </body>
+</html>

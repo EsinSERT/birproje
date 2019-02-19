@@ -1,0 +1,151 @@
+<html>
+    <head>
+
+    <style type="text/css">
+        
+        t-sol-ok {
+
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: calc(50% - 50px);
+            left: calc(50% - 350px);
+        }
+    
+        t-sol-ok img {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+    
+        t-sag-ok{
+
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: calc(50% - 50px);
+            left: calc(50% + 250px);
+        }
+    
+        t-sag-ok img {
+
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform: rotateY(180deg);
+        }
+    
+        t-box {
+
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            top: calc(50% - 250px);
+            left: calc(50% - 250px);
+            background-color: red;
+            overflow: hidden;
+        }
+    
+        t-slider {
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    
+        t-slider t-content {
+
+            position: absolute;
+            width: 2500px;
+            height: 500px;
+            top: 0px;
+            transition: all 1000ms ease;
+        }
+    
+        t-slider t-content t-slide {
+            position: relative;
+            float: left;
+            width: 500px;
+             height: 500px;
+        }
+    
+        t-slider t-content t-slide img {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+        }
+    
+    </style>
+
+    </head>
+    <body>
+           
+
+    <t-sol-ok style="opacity: 1;"><img src="C:\Users\w10\Desktop\iş foti\slideriçin\arrow.png"></t-sol-ok>
+    <t-box>
+        <t-slider>
+            <t-content style="left: -1500px;">
+                <t-slide><img src="C:\Users\w10\Desktop\iş foti\slideriçin\resim1.jpg"></t-slide>
+                <t-slide><img src="C:\Users\w10\Desktop\iş foti\slideriçin\resim2.png"></t-slide>
+                <t-slide><img src="C:\Users\w10\Desktop\iş foti\slideriçin\resim3.jpg"></t-slide>
+                <t-slide><img src="C:\Users\w10\Desktop\iş foti\slideriçin\resim4.jpg"></t-slide>
+                <t-slide><img src="C:\Users\w10\Desktop\iş foti\slideriçin\resim5.jpg"></t-slide>
+
+            </t-content>
+        </t-slider>
+            
+    </t-box>
+    <t-sag-ok style="opacity: 0.4;"><img src="C:\Users\w10\Desktop\iş foti\slideriçin\arrow.png"></t-sag-ok>
+
+    <script type="text/javascript">
+                
+        var sol = document.querySelector("t-sol-ok");
+        var sag = document.querySelector("t-sag-ok");
+        var content = document.querySelector("t-slider t-content");
+
+        var slideCount = 5;
+        var currentSlide = 0;
+
+        sol.onclick = function() {
+
+        if (sol.style.opacity == 1) {
+                currentSlide--;
+                if(currentSlide == -1)
+                    currentSlide = 4;
+                    scrollToIndex();
+
+                    }
+        };
+            
+        sag.onclick = function() {
+            
+        if (sag.style.opacity == 1) {
+                currentSlide++;
+        if (currentSlide == 5)
+                currentSlide = 4;
+                scrollToIndex();
+            
+        }
+    };
+            
+        var scrollToIndex = function() {
+
+        var offset = "-" + (currentSlide * 500) + "px";
+        content.style.left = offset;
+        sol.style.opacity = 1;
+        sag.style.opacity = 1;
+
+        if (currentSlide == 0)
+        sol.style.opacity = 0.4;
+            
+        if (currentSlide == 4)
+        sag.style.opacity = 0.4;
+            };
+            
+        scrollToIndex();
+            
+    </script>
+            
+    </body>
+
+</html>

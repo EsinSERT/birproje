@@ -1,0 +1,142 @@
+<html> 
+    <head>
+        <title>Esinin Çalışması </title>
+        <style type="text/css">
+
+            body {
+            
+            font-family: "Open Sans", Arial, sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #b3b3b3;
+            background:chocolate;
+            }
+
+            t-menu {
+                position:absolute;
+                width:50px;
+                height:50px;
+                top:0px;
+                background-color:burlywood
+            }
+           
+            t-menu.t-forward-state {
+
+                right: 250px;
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                -o-transition: all 1s ease;
+                -ms-transition: all 1s ease;
+
+            }
+
+            t-menu.t-backward-state {
+
+                right: 0px;
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                -o-transition: all 1s ease;
+                -ms-transition: all 1s ease;
+
+            }
+
+            t-box {
+
+                position:absolute;
+                width:250px;
+                height:650px;
+                background-color:cadetblue;
+                top:0px;
+                
+            }
+
+            t-box.t-open-state {
+                
+                right:0px;
+        
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                -o-transition: all 1s ease;
+                -ms-transition: all 1s ease;
+            }
+
+            t-box.t-closed-state {
+                
+                right:-250px;
+
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                -o-transition: all 1s ease;
+                -ms-transition: all 1s ease;
+            } 
+
+            t-text {
+
+                position: relative;
+                float: left;
+                width: 250px;
+                height: 100px;
+            
+                
+            }
+            
+            t-text t-yazi {
+
+                position: relative;
+                float: left;
+                text-align: center;
+                line-height: 10px;
+                margin-left: 100px;
+                top:20px;
+                font-size: 25px;
+                color:darkgreen;
+
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        
+        <t-menu class="t-backward-state"> </t-menu>
+        <t-box class="t-closed-state">
+
+                <t-text><t-yazi>Hakkımda</t-yazi></t-text>
+                <t-text><t-yazi>İletişim</t-yazi></t-text>
+                 <t-text><t-yazi>BıdıBodı</t-yazi></t-text>
+        </t-box>
+
+        <script>
+        var state = "closed";
+        var stateMenu ="backward";
+
+        let menu=document.querySelector("t-menu");
+        let box=document.querySelector("t-box");
+        
+        menu.onclick = function() {
+                    
+            if (state == "closed")
+                state="open";
+            else 
+                state="closed";
+            
+            box.className="t-"+ state +"-state";
+                    
+            if (stateMenu == "backward")
+                stateMenu="forward";
+            else
+                stateMenu="backward";
+            
+            menu.className="t-"+ stateMenu +"-state";
+        };
+
+
+
+
+        </script>
+
+
+    </body>
+ </html>

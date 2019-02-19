@@ -1,0 +1,473 @@
+<html>
+    <head>
+    <style type="text/css">
+
+        t-box {
+
+        position:absolute;
+        width: 800px;
+        height: 800px;
+        margin:0px;
+        top:calc(50% - 400px);
+        left:calc(50% - 400px);
+        background-color:brown;
+        overflow: hidden;
+        
+       
+        }
+
+        t-kutu {
+
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top:0px;
+        background-color:darkturquoise
+
+        }
+
+        t-kutu.t-closed-state {
+
+        left: 0px;
+        transition: all 1s ease;    
+
+        }
+
+        t-kutu.t-open-state {
+
+        left: 800px;
+        transition: all 1s ease;    
+
+        }
+
+        t-geri {
+
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top:560px;
+        margin-left: 760px;
+        background-color:darkred;
+
+        }
+
+        t-geri.t-closed-state {
+
+        left: 0px;
+        transition: all 1s ease;    
+
+        }
+
+        t-geri.t-open-state {
+
+        left: 800px;
+        transition: all 1s ease;    
+
+        }
+
+        t-menu {
+
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        background-color: blueviolet;
+
+                  
+        }
+
+        t-menu.t-closed-state {
+
+        left: -800px;
+        transition: all 1s ease;
+
+        }
+
+        t-menu.t-open-state {
+
+        left: 0px;
+        transition: all 1s ease;
+
+        }
+
+        t-text {
+
+        position:absolute;
+        width: 800px;
+        height: 150px;
+        background-color: cadetblue;
+        text-align: center;
+        line-height: 200px;
+        color:black;
+
+        }
+
+        t-texte {
+
+        position:absolute;
+        width: 400px;
+        height: 400px;
+        background-color: cadetblue;
+        text-align: center;
+        color:black;
+        left:400px;
+        top:155px;
+
+        }
+            
+        t-scroll {
+
+        position:absolute;
+        width: 400px;
+        height: 750px;
+        left:0px;
+        top:150px;
+        overflow: hidden;
+        
+
+        }
+
+        t-box1 {
+
+        position: absolute;
+        width: 420px;
+        height: 700px;
+        background-color:crimson;
+        left:5px;
+        overflow-y:scroll;
+        top:5px;
+               
+        }
+          
+        t-item-box{
+
+        position:relative;
+        float: left;
+        width: 275px;
+        height: 50px;
+        left:25px;
+        background-color: chartreuse;
+
+        }
+
+        t-sol-ok {
+
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: calc(50% - 50px);
+        left: calc(50% - 410px);
+        
+        }
+    
+        t-sol-ok img {
+
+        position: absolute;
+        width: 100px;
+        height: 100px;
+
+        }
+    
+        t-sag-ok {
+
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: calc(50% - 50px);
+        left: calc(50% + 310px);
+
+        }
+    
+        t-sag-ok img {
+
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        transform: rotateY(180deg);
+
+        }
+    
+        t-boxes {
+
+        position: absolute;
+        width: 400px;
+        height: 300px;
+        top: calc(50% - 150px);
+        left: calc(50% - 150px);
+        background-color: red;
+        overflow: hidden;
+      
+
+        }
+            
+        t-slider {
+
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        }
+    
+        t-slider t-content {
+
+        position: absolute;
+        width: 2500px;
+        height: 400px;
+        top: 0px;
+        transition: all 1000ms ease;
+
+        }
+    
+        t-slider t-content t-slide {
+
+        position: relative;
+        float: left;
+        width: 400px;
+        height: 300px;
+
+        }
+    
+        t-slider t-content t-slide img {
+
+        position: absolute;
+        width: 400px;
+        height: 300px;
+
+        }
+
+        t-boxess {
+
+        position: absolute;
+        width: 800px;
+        height: 200px;
+        top:600px;
+        left:calc(50% - 400px);
+        background-color:coral;
+        overflow: hidden;
+        
+        
+
+        }
+
+        t-contento {
+
+        position: absolute;
+        width: 1200px;
+        height: 200px;
+        top: 0px;
+        background-color: aquamarine;
+    
+  
+        }
+    
+        t-contento t-slides {
+
+        position: relative;
+        float: left;
+        width: 200px;
+        height: 200px;
+
+        }
+    
+        t-contento t-slides img {
+
+        position: absolute;
+        width: 200px;
+        height: 200px;
+
+        }
+        
+    
+        
+    </style>
+    </head>
+    <body>
+        <t-box>
+            
+            <t-sol-ok style="opacity: 1;"><img src="C:\Users\w10\Desktop\iş foti\slideriçin\arrow.png"></t-sol-ok>
+                <t-boxes>
+                    <t-slider>
+                        <t-content style="left: -1500px;">
+                            <t-slide><img src="C:\Users\w10\Desktop\iş foti\slideriçin\resim1.jpg"></t-slide>
+                            <t-slide><img src="C:\Users\w10\Desktop\iş foti\slideriçin\resim2.png"></t-slide>
+                            <t-slide><img src="C:\Users\w10\Desktop\iş foti\slideriçin\resim3.jpg"></t-slide>
+                            <t-slide><img src="C:\Users\w10\Desktop\iş foti\slideriçin\resim4.jpg"></t-slide>
+                            <t-slide><img src="C:\Users\w10\Desktop\iş foti\slideriçin\resim5.jpg"></t-slide>
+            
+                        </t-content>
+                    </t-slider>
+                </t-boxes>
+            <t-sag-ok style="opacity: 0.4;"><img src="C:\Users\w10\Desktop\iş foti\slideriçin\arrow.png"></t-sag-ok>
+
+            <t-boxess>
+                <t-contento> 
+                    <t-slides> <img src="C:\Users\w10\Desktop\1.foto.jpg"></t-slides>
+                    <t-slides> <img src="C:\Users\w10\Desktop\2.foto.jpg"></t-slides>
+                    <t-slides> <img src="C:\Users\w10\Desktop\3.foto.jpg"></t-slides>
+                    <t-slides> <img src="C:\Users\w10\Desktop\4.foto.jpeg"></t-slides>
+                    <t-slides> <img src="C:\Users\w10\Desktop\5.foto.jpg"></t-slides>
+                    <t-slides> <img src="C:\Users\w10\Desktop\6.foto.jpg"></t-slides>
+                </t-contento>
+            </t-boxess>
+
+            <t-kutu class="t-closed-state"> </t-kutu>
+            <t-menu class="t-closed-state">
+                <t-text> Hoşgeldin </t-text>
+                <t-texte> Anasayfa blogu bu içerikte yazılcak ve yönetilecektir.
+                    Lütfen bilgilerinizi dogru yazınız ve imla kurallarına dikkat ediniz. </t-texte>
+              
+                    <t-scroll>
+                        <t-box1>
+                            <t-item-box>Item1</t-item-box>
+                            <t-item-box>Item2</t-item-box> 
+                            <t-item-box>Item3</t-item-box>
+                            <t-item-box>Item4</t-item-box>
+                            <t-item-box>Item5</t-item-box> 
+                            <t-item-box>Item6</t-item-box>
+                            <t-item-box>Item7</t-item-box>
+                            <t-item-box>Item8</t-item-box> 
+                            <t-item-box>Item9</t-item-box>
+                            <t-item-box>Item10</t-item-box>
+                            <t-item-box>Item11</t-item-box> 
+                            <t-item-box>Item12</t-item-box>
+                            <t-item-box>Item13</t-item-box>
+                            <t-item-box>Item14</t-item-box> 
+                            <t-item-box>Item15</t-item-box>
+                            <t-item-box>Item16</t-item-box>
+                            <t-item-box>Item17</t-item-box>
+                            <t-item-box>Item18</t-item-box> 
+                            <t-item-box>Item19</t-item-box>
+                            <t-item-box>Item20</t-item-box>
+                            <t-item-box>Item21</t-item-box> 
+                            <t-item-box>Item22</t-item-box>
+                            <t-item-box>Item23</t-item-box>
+                            <t-item-box>Item24</t-item-box>
+                            <t-item-box>Item25</t-item-box> 
+                            <t-item-box>Item26</t-item-box>
+                            <t-item-box>Item27</t-item-box>
+                            <t-item-box>Item28</t-item-box> 
+                            <t-item-box>Item29</t-item-box>
+                            <t-item-box>Item30</t-item-box>
+                        </t-box1>
+                        
+                    </t-scroll>
+                <t-geri class="t-closed-state"></t-geri>
+                </t-menu>
+                
+    <script type="text/javascript">
+
+        var state = "closed";
+        var menu=document.querySelector("t-menu");
+        var kutu=document.querySelector("t-kutu");
+        var geri=document.querySelector("t-geri");
+    
+        kutu.onclick = function() {
+            if (state == "closed")
+                    state="open";
+                    
+            else
+                    state="closed";
+    
+                kutu.className="t-"+ state +"-state";
+                
+                menu.className="t-"+ state +"-state";
+               
+                
+        };
+
+        geri.onclick=function() {
+            if (state == "closed")
+                    state="open";
+                    
+            else
+                    state="closed";
+    
+                kutu.className="t-"+ state +"-state";
+                
+                menu.className="t-"+ state +"-state";
+         };
+            
+        var sol = document.querySelector("t-sol-ok");
+        var sag = document.querySelector("t-sag-ok");
+        var content = document.querySelector("t-slider t-content");
+
+        var slideCount = 5;
+        var currentSlide = 0;
+
+        sol.onclick = function() {
+
+        if (sol.style.opacity == 1) {
+                currentSlide--;
+                if(currentSlide == -1)
+                    currentSlide = 4;
+                    scrollToIndex();
+
+                    }
+        };
+            
+        sag.onclick = function() {
+            
+        if (sag.style.opacity == 1) {
+                currentSlide++;
+        if (currentSlide == 5)
+                currentSlide = 4;
+                scrollToIndex();
+            
+        }
+    };
+            
+        var scrollToIndex = function() {
+
+        var offset = "-" + (currentSlide * 400) + "px";
+        content.style.left = offset;
+        sol.style.opacity = 1;
+        sag.style.opacity = 1;
+
+        if (currentSlide == 0)
+        sol.style.opacity = 0.4;
+            
+        if (currentSlide == 4)
+        sag.style.opacity = 0.4;
+         };
+            
+        scrollToIndex();
+
+        var contento = document.querySelector(" t-contento");                                        
+
+        function slideToLeft(left) {
+
+            contento.style.left = "-" + left + "px";
+
+            setTimeout(function(){
+                
+                if (left < 400)
+                    slideToLeft(left + 5);
+                else
+                    slideToRight(left);
+
+            }, 25);
+
+        }
+
+        function slideToRight(left) {
+              
+            contento.style.left = "-" + left + "px";
+
+               setTimeout(function(){
+                 
+                 if(left > 0)
+                   slideToRight(left - 5);
+                 else
+                    slideToLeft(left);
+
+
+               }, 25);
+              
+        }
+         slideToLeft(0);
+
+
+
+        </script>    
+
+    </body>
+</html>

@@ -1,0 +1,139 @@
+<html>
+
+    <head>
+
+    <style type="text/css"> 
+            
+        body {
+
+        position: absolute;
+        width: 100vw;
+        height:100vh;
+        margin:0;
+        padding:0;
+        top:0;
+        left:0;
+
+    }
+
+        t-box {
+
+        position:absolute;
+        width:500px;
+        height:500px;
+        background-color: red;
+        top:calc(50% - 250px);
+        left: calc(50% - 250px);
+        overflow: hidden;
+    }
+
+        t-resim {
+                    
+        position:absolute;
+        width: 2500px;
+        height: 500px;
+                
+    }
+
+        t-slider {
+
+        position: relative;
+        float: left;
+        width: 500px;
+        height: 500px;
+        text-align:center;
+               
+                
+    }
+            
+        t-slider img {
+
+        position: relative;
+        float: left;
+        width: 500px;
+        height: 500px;
+        text-align:center;
+               
+                
+    }
+            
+        t-ileri {
+
+        position: absolute;
+        width: 128px;
+        height: 128px;
+        top:calc(50% - 64px);
+        left:700px;
+        transition: all 1s ease;
+    }
+
+        t-geri {
+
+        position: absolute;
+        width: 128px;
+        height: 128px;
+        top:calc(50% - 64px);
+        right:700px;
+        transition: all 1s ease;
+    }
+            
+    </style>
+    </head>
+    <body >
+        <t-box>
+            <t-resim>
+            <t-slider>  <img  src="C:\Users\w10\Desktop\resim1.jpg" alt="resim1"/> </t-slider>
+            <t-slider>  <img src="C:\Users\w10\Desktop\resim2.png" alt="resim2"/> </t-slider>
+            <t-slider>  <img src="C:\Users\w10\Desktop\resim3.jpg" alt="resim3"/> </t-slider>
+            <t-slider>  <img src="C:\Users\w10\Desktop\resim4.jpg" alt="resim4"/> </t-slider>
+            <t-slider>  <img src="C:\Users\w10\Desktop\resim5.jpg" alt="resim5"/> </t-slider>
+            </t-resim>
+        </t-box>
+        <t-ileri><a href="javascript:ileri()"> <img src="C:\Users\w10\Desktop\ileri.jpg" alt="ileri"/></a></t-ileri>
+        <t-geri><a href="javascript:geri()"> <img src="C:\Users\w10\Desktop\geri.jpg" alt="geri"/></a></t-geri>
+
+        <script type="text/javascript">
+
+            var slider=document.getElementsByTagName("t-slider");
+            var slidersayısı=slider.length;
+            var sliderNo = 0;
+
+            slidergoster(sliderNo);
+                function ileri() {
+                    sliderNo++;
+                    slidergoster(sliderNo);
+                }
+
+                function geri () {
+
+                    sliderNo--;
+                    slidergoster(sliderNo);
+
+                }
+                function slidergoster(sliderNumarası) {
+
+                     sliderNo = sliderNumarası;
+
+                     if(sliderNumarası >= slidersayısı) {
+
+                         sliderNo = 0;
+                     }
+                    
+                   if(sliderNumarası < 0) {
+
+                       sliderNo = slidersayısı-1;
+                   }
+                   
+                   for(i = 0; i < slidersayısı; i++) {
+
+                       slider[i].style.display = "none";
+                   }
+                   
+                   slider[sliderNo].style.display ="block";
+
+                 };
+        </script>
+    </body>
+
+</html>
+

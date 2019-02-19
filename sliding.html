@@ -1,0 +1,101 @@
+<html>
+
+  <head>
+
+    <style type="text/css">
+
+    t-box {
+
+        position: absolute;
+        width: 800px;
+        height: 200px;
+        top:calc(50% - 100px);
+        left:calc(50% - 400px);
+        background-color:coral;
+        overflow: hidden;
+
+    }
+
+    t-content {
+
+        position: absolute;
+        width: 1200px;
+        height: 200px;
+        top: 0px;
+        background-color: aquamarine;
+    
+  
+    }
+    
+    t-content t-slide {
+
+        position: relative;
+        float: left;
+        width: 200px;
+        height: 200px;
+
+    }
+    
+    t-content t-slide img {
+
+        position: absolute;
+        width: 200px;
+        height: 200px;
+
+    }
+    
+    </style>
+
+  </head>
+
+  <body>
+    <t-box>
+    <t-content> 
+        <t-slide> <img src="C:\Users\w10\Desktop\1.foto.jpg"></t-slide>
+        <t-slide> <img src="C:\Users\w10\Desktop\2.foto.jpg"></t-slide>
+        <t-slide> <img src="C:\Users\w10\Desktop\3.foto.jpg"></t-slide>
+        <t-slide> <img src="C:\Users\w10\Desktop\4.foto.jpeg"></t-slide>
+        <t-slide> <img src="C:\Users\w10\Desktop\5.foto.jpg"></t-slide>
+        <t-slide> <img src="C:\Users\w10\Desktop\6.foto.jpg"></t-slide>
+    </t-content>
+       
+    </t-box>
+        <script type="text/javascript">
+
+        var content = document.querySelector(" t-content");                                        
+
+        function slideToLeft(left) {
+
+            content.style.left = "-" + left + "px";
+
+            setTimeout(function(){
+                
+                if (left < 400)
+                    slideToLeft(left + 5);
+                else
+                    slideToRight(left);
+
+            }, 25);
+
+        }
+
+        function slideToRight(left) {
+              
+            content.style.left = "-" + left + "px";
+
+               setTimeout(function(){
+                 
+                 if(left > 0)
+                   slideToRight(left - 5);
+                 else
+                    slideToLeft(left);
+
+
+               }, 25);
+              
+        }
+         slideToLeft(0);
+         
+        </script>
+    </body>
+</html>
